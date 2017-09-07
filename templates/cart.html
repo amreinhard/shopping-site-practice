@@ -7,16 +7,21 @@
         <thead>
         <tr>
             <th>Melon Name</th>
-            {% for melon in melon_obj %}
-                {{ melon.common_name }}
-            {% endfor %}
             <th>Quantity</th>
             <th>Price</th>
             <th>Total</th>
-
         </tr>
         </thead>
         <tbody>
+            {% for melon in melon_obj %}
+            <tr>
+                <td> {{ melon.common_name }} </td>
+                <td> {{ melon.quantity }} </td>
+                <td> {{ melon.price_str() }} </td>
+                <td> ${{ melon.item_total }} </td>
+            </tr>
+            {% endfor %}
+
         </tbody>
     </table>
 
